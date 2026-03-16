@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { AppController } from "./app.controller";
 import databaseConfig from "./config/database.config";
+import { ReconciliationModule } from "./reconciliation/reconciliation.module";
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import databaseConfig from "./config/database.config";
         synchronize: true,
       }),
     }),
+    ReconciliationModule,
   ],
   controllers: [AppController],
 })
