@@ -4,6 +4,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { AppController } from "./app.controller";
 import databaseConfig from "./config/database.config";
 import { ReconciliationModule } from "./reconciliation/reconciliation.module";
+import { TransactionModule } from "./transaction/transaction.module";
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { ReconciliationModule } from "./reconciliation/reconciliation.module";
       }),
     }),
     ReconciliationModule,
+    TransactionModule,
   ],
   controllers: [AppController],
 })
